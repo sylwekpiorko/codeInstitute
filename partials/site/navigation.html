@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://bootswatch.com/{{selectedTemplate}}/bootstrap.min.css">
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" id="branded" href="#/home">PILSPAW</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li ng-class="{ active : isActive ( '/home' )}"><a href="#/home">About Us</a></li>
+              <li ng-class="{ active : isActive ( '/projects' )}"><a href="#/projects">Ours Projects</a></li>
+              <li ng-class="{ active : isActive ( '/find-us' )}"><a href="#/find-us">Find Us</a></li>
+              <li ng-class="{ active : isActive ( '/stock' )}"><a href="#/stock">Stock</a></li>
+            </ul>     
+            <ul class="nav navbar-nav navbar-right">
+              <li ng-class="{ active : isActive ( '/login' )}" ng-if="!loggedIn"><a href="#/login">LOG IN</a></li>
+              <li ng-class="{ active : isActive ( '/register' )}" ng-if="!loggedIn"><a href="#/register">SIGN UP</a></li>           
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+ 
+
+      
+      <div class="pull-right">
+
+
+        <div class="col-xs-6">
+          <div class="well well-sm pull-right">Change skin</div>
+        </div>
+       
+        <div class="col-xs-6">
+          <select class="form-control" ng-model="selectedTemplate">
+            <option ng-repeat="name in names">{{name}}</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
