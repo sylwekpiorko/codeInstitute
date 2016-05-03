@@ -14,56 +14,64 @@ angular.module('controllersSite' , [] )
   var slides = $scope.slides = [];
   var currIndex = 0;
 
-  $scope.addSlide = function() {
-    var newWidth = 600 + slides.length + 1;
-    console.log( newWidth );
-    slides.push({
-      image: 'http://lorempixel.com/' + newWidth + '/300',
-      text: ['Nice image','Awesome photograph','That is so cool','I love that'][slides.length % 4],
-      id: currIndex++
-    });
-  };
+  slides = $scope.slides = [
+    {image: 'images/img00.jpg', text: 'img00.jpg', id: 0},
+    {image: 'images/img01.jpg', text: 'img01.jpg', id: 1},
+    {image: 'images/img02.jpg', text: 'img02.jpg', id: 2},
+    {image: 'images/img03.jpg', text: 'img03.jpg', id: 3}
+  ];
 
-  $scope.randomize = function() {
-    var indexes = generateIndexesArray();
-    assignNewIndexesToSlides(indexes);
-  };
+  // $scope.addSlide = function() {
+  //   var newWidth = 600 + slides.length + 1;
+  //   console.log( newWidth );
+  //   slides.push({
+  //     image: 'http://lorempixel.com/' + newWidth + '/300',
+  //     text: ['Nice image','Awesome photograph','That is so cool','I love that'][slides.length % 4],
+  //     id: currIndex++
+  //   });
+  // };
 
-  for (var i = 0; i < 4; i++) {
-    $scope.addSlide();
-  }
+  // $scope.randomize = function() {
+  //   var indexes = generateIndexesArray();
+  //   assignNewIndexesToSlides(indexes);
+  // };
+
+  // for (var i = 0; i < 4; i++) {
+  //   $scope.addSlide();
+  // }
+  // console.log( slides );
 
   // Randomize logic below
 
-  function assignNewIndexesToSlides(indexes) {
-    for (var i = 0, l = slides.length; i < l; i++) {
-      slides[i].id = indexes.pop();
-    }
-  }
+  // function assignNewIndexesToSlides(indexes) {
+  //   for (var i = 0, l = slides.length; i < l; i++) {
+  //     slides[i].id = indexes.pop();
+  //   }
+  // }
 
-  function generateIndexesArray() {
-    var indexes = [];
-    for (var i = 0; i < currIndex; ++i) {
-      indexes[i] = i;
-    }
-    return shuffle(indexes);
-  }
+  // function generateIndexesArray() {
+  //   var indexes = [];
+  //   for (var i = 0; i < currIndex; ++i) {
+  //     indexes[i] = i;
+  //   }
+  //   return shuffle(indexes);
+  // }
 
   // http://stackoverflow.com/questions/962802#962890
-  function shuffle(array) {
-    var tmp, current, top = array.length;
+  // function shuffle(array) {
+  //   var tmp, current, top = array.length;
 
-    if (top) {
-      while (--top) {
-        current = Math.floor(Math.random() * (top + 1));
-        tmp = array[current];
-        array[current] = array[top];
-        array[top] = tmp;
-      }
-    }
-
-    return array;
-  }
+  //   if (top) {
+  //     while (--top) {
+  //       current = Math.floor(Math.random() * (top + 1));
+  //       tmp = array[current];
+  //       array[current] = array[top];
+  //       array[top] = tmp;
+  //     }
+  //   }
+  //   console.log( array );
+  //   return array;
+  // }
 })
 
 

@@ -4,7 +4,7 @@
 		
 		<div class="col-xs-12">
 			
-			<div class="col-md-6 col-xs-12">
+			<div class="col-md-12 col-xs-12">
 
 				<blockquote class="pull-right">
 					<h2>The most important is the satisfaction and the development of personality</h2>
@@ -13,9 +13,9 @@
 			
 			</div>
 
-			<div class="col-md-6 col-xs-12">
+			<div class="col-md-12 col-xs-12">
 				
-			  <div style="height: 305px">
+			  <div style="height: 620px">
 			    <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
 			      <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
 			        <img ng-src="{{slide.image}}" style="margin:auto;">
@@ -27,8 +27,8 @@
 			    </uib-carousel>
 			  </div>
 
-			  <div class="row">
-			    <div class="col-md-12" style="border: 2px solid black">
+<!-- 			  <div class="row">
+			    <div class="col-md-12">
 			      <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button>
 			      <button type="button" class="btn btn-info" ng-click="randomize()">Randomize slides</button>
 			      <div class="checkbox">
@@ -38,11 +38,12 @@
 			        </label>
 			      </div>
 			    </div>
-			    <div class="col-md-12" style="border: 2px solid black">
+				<div class="col-md-12">
 			      Interval, in milliseconds: <input type="number" class="form-control" ng-model="myInterval">
 			      <br />Enter a negative number or 0 to stop the interval.
 			    </div>
-			  </div>
+			  </div> -->
+			
 			</div>
 
 		</div>
