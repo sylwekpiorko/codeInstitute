@@ -15,10 +15,10 @@ angular.module('controllersSite' , [] )
   var currIndex = 0;
 
   slides = $scope.slides = [
-    {image: 'images/img00.jpg', text: 'img00.jpg', id: 0},
-    {image: 'images/img01.jpg', text: 'img01.jpg', id: 1},
-    {image: 'images/img02.jpg', text: 'img02.jpg', id: 2},
-    {image: 'images/img03.jpg', text: 'img03.jpg', id: 3}
+    {image: 'images/DSC_4122.jpg', text: 'Gas measure gauges', id: 0},
+    {image: 'images/DSC_4127.jpg', text: 'Welding', id: 1},
+    {image: 'images/DSC_4227.jpg', text: 'Quality testing', id: 2},
+    {image: 'images/DSC_4548.jpg', text: 'Grinding', id: 3}
   ];
 
   // $scope.addSlide = function() {
@@ -75,10 +75,47 @@ angular.module('controllersSite' , [] )
 })
 
 
-.controller( 'siteProjects' , function( $scope ) {
+.controller( 'aboutUs' , function( $scope ) {
 
   // to be done
 
+  console.log( "You are in aboutUs controller now ..." );
+
+
+}).controller( 'siteProjects' , function( $scope ) {
+
+    // Set of Photos
+    $scope.photos = [
+        {src: 'images/projects/1.jpg', desc: '1'},
+        {src: 'images/projects/2.jpg', desc: '2'},
+        {src: 'images/projects/3.jpg', desc: '3'},
+        {src: 'images/projects/4.jpg', desc: '4'},
+        {src: 'images/projects/5.jpg', desc: '5'},
+        {src: 'images/projects/6.jpg', desc: '6'}
+    ];
+
+    // initial image index
+    $scope._Index = 0;
+
+    // if a current image is the same as requested image
+    $scope.isActive = function (index) {
+        return $scope._Index === index;
+    };
+
+    // show prev image
+    $scope.showPrev = function () {
+        $scope._Index = ($scope._Index > 0) ? --$scope._Index : $scope.photos.length - 1;
+    };
+
+    // show next image
+    $scope.showNext = function () {
+        $scope._Index = ($scope._Index < $scope.photos.length - 1) ? ++$scope._Index : 0;
+    };
+
+    // show a certain image
+    $scope.showPhoto = function (index) {
+        $scope._Index = index;
+    };
   console.log( "You are in siteProjects controller now ..." );
 
 })
@@ -86,17 +123,19 @@ angular.module('controllersSite' , [] )
 
 .controller( 'siteFindUs' , function( $scope , $http ) {
 
+  $scope.title = 'About Us';
+  $scope.maps = [{
+    address: 'Ojca Maksymiliana Marii Kolbe, Piła, Polska',
+    zoom: 16,
+    width: 600
+    }, {
+    address: '51st Street, New York, New York',
+    zoom: 14,
+    width: 400
+    }];
+  $scope.map = $scope.maps[0];
+
   console.log( "You are in siteFindUs controller now ..." );
-
-
-  $scope.seba = {};
-  $scope.seba.firstName = "Seba";
-  $scope.seba.lastName  = "Smith";
-
-  $scope.adam = {};
-  $scope.adam.firstName = "Adam";
-  $scope.adam.lastName = "Nowak";
-
 })
 
 

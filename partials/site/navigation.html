@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-sm-12">
       
-      <nav class="navbar navbar-default">
+      <nav class="navbar navbar-default effect8">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -14,20 +14,20 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" id="branded" href="#/home">PILSPAW</a>
+            <a class="nav navbar-brand" id="branded" ng-class="{ strong : isNavActive ( '/home' )}" href="#/home">PILSPAW</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li ng-class="{ active : isActive ( '/home' )}"><a href="#/home">About Us</a></li>
-              <li ng-class="{ active : isActive ( '/projects' )}"><a href="#/projects">Ours Projects</a></li>
-              <li ng-class="{ active : isActive ( '/find-us' )}"><a href="#/find-us">Find Us</a></li>
-              <li ng-class="{ active : isActive ( '/stock' )}"><a href="#/stock">Stock</a></li>
+              <li ng-class="{ active : isNavActive ( '/about-us' )}"><a href="#/about-us">About Us</a></li>
+              <li ng-class="{ active : isNavActive ( '/projects' )}"><a href="#/projects">Ours Projects</a></li>
+              <li ng-class="{ active : isNavActive ( '/find-us' )}"><a href="#/find-us">Find Us</a></li>
+              <li ng-class="{ active : isNavActive ( '/stock' )}"><a href="#/stock">Stock</a></li>
             </ul>     
             <ul class="nav navbar-nav navbar-right">
-              <li ng-class="{ active : isActive ( '/login' )}" ng-if="!loggedIn"><a href="#/login">LOG IN</a></li>
-              <li ng-class="{ active : isActive ( '/register' )}" ng-if="!loggedIn"><a href="#/register">SIGN UP</a></li>           
+              <li ng-class="{ active : isNavActive ( '/login' )}" ng-if="!loggedIn"><a href="#/login">LOG IN</a></li>
+              <li ng-class="{ active : isNavActive ( '/register' )}" ng-if="!loggedIn"><a href="#/register">SIGN UP</a></li>           
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

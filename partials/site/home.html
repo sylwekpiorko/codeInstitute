@@ -8,6 +8,9 @@
 
 				<blockquote class="pull-right">
 					<h2>The most important is the satisfaction and the development of personality</h2>
+				</blockquote>
+
+				<blockquote class="pull-left">
 	        		<p>The first strategy that people use is a vision that is both precise and attractive model of what they want to create.</p>
 				</blockquote>
 			
@@ -20,8 +23,8 @@
 			      <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
 			        <img ng-src="{{slide.image}}" style="margin:auto;">
 			        <div class="carousel-caption">
-			          <h4>Slide {{slide.id}}</h4>
-			          <p>{{slide.text}}</p>
+			          <!-- <h4>Slide {{slide.id}}</h4> -->
+			          <h4>{{slide.text}}</h4>
 			        </div>
 			      </uib-slide>
 			    </uib-carousel>

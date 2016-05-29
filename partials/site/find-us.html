@@ -1,31 +1,41 @@
 <div class="container">
-
-    <userinfo user="seba"></userinfo>
-    <userinfo user="adam"></userinfo>
-  
-  <div class="col-xs-12 label label-info">
-
-    <h1>Find Us</h1>
-    <h1>TO BE DONE</h1>
-  
-  </div>
-
-  <div class="col-xs-12 label label-danger">
+  <div class="row">
     
-    <address>
-      <h3><strong>PILSPAW</strong><br></h3>
-      Jana Nowaka 98 street<br>
-      64-920 Pila<br>
-      POLAND<br>
-      <abbr title="Phone">P:</abbr> (0048) 67-215-9999
-    </address>
-     
-    <address>
-      <strong>Full Name</strong><br>
-      <a href="mailto:#">pilspaw@pilspaw.com</a>
-    </address>
+    <div class="col-lg-6 label label-info">
+      
+      <address>
+        <h3><strong>PILSPAW</strong><br></h3>
+        Ojca Maksymiliana Marii Kolbe<br>
+        64-920 Pila<br>
+        POLAND<br>
+        <abbr title="Phone">P:</abbr> (0048) 67-215-9999
+      </address>
+       
+      <address>
+        <strong>E-mail</strong><br>
+        <a href="mailto:#">pilspaw@pilspaw.com</a>
+      </address>
 
+    </div>
+
+
+    <div class="col-lg-6 label">
+
+<!--       <h1>{{title}}</h1> -->
+
+
+<!--           <div class="col-md-4">
+            <h1>Our Locations</h1>
+            <select ng-model="map" ng-options="mapview.address for mapview in maps"></select>
+          </div> -->
+
+            <!-- <h3>{{map.address}}</h3> -->
+
+          <!-- flexible map, map object defined in controller direective -->
+            <make-map map="map"></make-map>
+
+
+    </div>
+    
   </div>
-
-  
 </div>

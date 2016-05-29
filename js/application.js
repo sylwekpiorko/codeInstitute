@@ -13,6 +13,11 @@ angular.module('app' , [ 'ngRoute' , 'controllersNavigation' , 'controllersSite'
 		templateUrl: 'partials/site/home.html'
 		})
 
+		.when( '/about-us' , {
+		controller: 'aboutUs',
+		templateUrl: 'partials/site/about-us.html'
+		})
+
 		.when( '/projects' , {
 		controller: 'siteProjects',
 		templateUrl: 'partials/site/projects.html'  

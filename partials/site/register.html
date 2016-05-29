@@ -72,7 +72,7 @@
                                 placeholder="Re-type password"
                                 compare-to="registerForm.password" 
                                 required />
-                        <p ng-show="register_form.passconf.$error.minlength" class="help-block">Retyped password is to short</p>
+                        <!-- <p ng-show="register_form.passconf.$error.minlength" class="help-block">Retyped password is to short</p> -->
                         <p ng-show="register_form.passconf.$error.compareTo" class="help-block">Must match the previous entry</p>
                         <span class="text-danger">{{errors.passconf}}</span>
                     </div>

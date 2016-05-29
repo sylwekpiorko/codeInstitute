@@ -10,11 +10,11 @@ angular.module('controllersNavigation' , [] )
 			
 	};
 	
-	$scope.isActive = function ( path ) {
+	$scope.isNavActive = function ( path ) {
 			return $location.path() === path;
 	};	
 
-	$scope.names = [ 'cerulean', 'cosmo', 'cyborg', 'darkly', 'flatly', 'journal', 'lumen', 'paper', 'readable', 'sandstone', 'simplex', 'slate', 'spacelab', 'superhero', 'united', 'yeti' ];
-	$scope.selectedTemplate = $scope.names[2];
+	$scope.names = [ 'cerulean', 'cosmo', 'flatly', 'lumen', 'paper', 'readable', 'sandstone', 'simplex', 'slate', 'spacelab', 'superhero', 'united', 'yeti' ];
+	$scope.selectedTemplate = $scope.names[7];
 
 });
