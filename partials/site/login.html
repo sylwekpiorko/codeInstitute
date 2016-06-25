@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-sm-6 center-block" style="float: none;">
+            <div class="col-sm-6">
 
                 
                 <div class="panel panel-default">
@@ -14,7 +14,8 @@
 
                     <div class="panel-body">        
                         
-                        <div ng-if="errors.login" class="alert alert-danger">{{errors.login}}</div>
+                            <div ng-if="errors.login" class="alert alert-danger">{{errors.login}}</div>
+                            <div ng-if="noErrors.login" class="alert alert-success">{{noErrors.login}}</div>
                         
                         <div class="form form-group" ng-class="{ 'has-error' : errors.login }">
                             <label>Email</label>
@@ -29,11 +30,41 @@
                         <br>
 
                         <button class="btn btn-primary btn-block">Log in</button>
+
                     
 
                     </div>
-                </div>
+                </div> 
+                
+                       
+            </div>
 
+            <div class="col-sm-6">
+                    <a href="" ng-click="showData()" style="text-decoration: none;"><span class="label label-warning" style="font-size: 1em;">Show valid data</span></a>    
+                    <div class="input-group" ng-show="datas">
+                        <span class="input-group-addon">Search:</span>
+                        <input type="text" class="form-control" value="" ng-model="search">
+                        
+                    </div>
+
+                <table class="table" ng-show="datas">
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th></th>
+                        </tr>                        
+                    </thead>
+                    <tbody>
+                            <tr ng-repeat="data in myData | filter : search">
+                                <td>{{data.email}}</td>
+                                <td>{{data.password}}</td>
+                                <td><a href="" ng-click="removeName(data)">Remove</td>                                
+                            </tr>
+                    </tbody>
+                    
+                </table>
+            
             </div>
 
         </div>

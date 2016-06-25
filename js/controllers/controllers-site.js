@@ -141,7 +141,51 @@ angular.module('controllersSite' , [] )
 
 .controller( 'siteStock' , function( $scope ) {
 
-	// to be done
+    var dataset = [];                       // initialize empty array
+    for (var i=0; i < 40; i++) {            // loop 40 times
+      var newNumber = Math.round(Math.random() * 29 + 1);   // new random number (0-30)
+      dataset = dataset.concat(newNumber);  // add new number to array
+    }
+
+    // var x = d3.scale.linear()
+    //     .domain([0, d3.max(data)])
+    //     .range([0, 420]);
+
+    d3.select(".chart")
+        .selectAll("div")
+        .data(dataset)
+        .enter()
+        .append("div")
+        .attr("class", "bar")
+        .style("height", function(d) { 
+            var barHeight = d * 5;
+            return barHeight + "px";            
+        });
+        // .text(function(d) { return d; }); 
+
+        console.log(dataset);
+
+      var w = 500;
+      var h = 50;
+      var svg = d3.select(".chart")
+          .append("svg")
+          .attr("width", w)
+          .attr("height", h);
+
+      var dataset = [ 5, 10, 15, 20, 25 ];
+      
+      var circles = svg.selectAll("circle")
+                       .data(dataset)          
+                       .enter()
+                       .append("circle");
+
+      circles.attr("cx", function(d, i) {
+                  return (i * 50) + 25;
+              })
+             .attr("cy", h/2)
+             .attr("r", function(d) {
+                  return d;
+             });
 
   console.log( "You are in siteStock controller now ..." );
 
@@ -154,12 +198,42 @@ angular.module('controllersSite' , [] )
 
   console.log( "You are in login controller now ..." );
 
+    $http.get('data.json').success(function(response) {
+       $scope.myData = response;
+
+       // console.log( $scope.myData );
+       console.log( $scope.myData[1].email );
+       console.log( $scope.myData[1].password );
+    
+    })
+
+    $scope.removeName = function(row) {
+      $scope.myData.splice($scope.myData.indexOf(row), 1);
+    }
+
+    $scope.showData = function() {
+      return ($scope.datas ? $scope.datas = false : $scope.datas = true )
+    }
+
+
     $scope.input = {};
 
     $scope.formSubmit = function () {
+      
       $scope.errors = {};
-      $scope.errors.login = 'Email or password not valid';
-      console.log( $scope.input );
+      $scope.noErrors = {};
+
+      var dataLength = $scope.myData.length;
+      for ( var i=0 ; i < dataLength ; i++ ) {
+        if ( $scope.input.email == $scope.myData[i].email && $scope.input.password == $scope.myData[i].password) {
+          alert("Form is valid at position " + ( i + 1 ) + " of data.json");
+          return $scope.noErrors.login = "Email and password are valid";
+        }
+      }
+      $scope.errors.login = "Email or password not valid";
+      // console.log( $scope.errors.login );
+      // console.log( $scope.input.email );
+      // console.log( $scope.input.password );
     };    
 
 })
